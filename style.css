@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #0b0d12;
+    --calculator: #151922;
+    --display: #0a0c10;
+    --button: #202531;
+    --button-hover: #2b3240;
+    --operator: #343b4b;
+    --accent: #7c5cff;
+    --accent-hover: #9278ff;
+    --text: #ffffff;
+    --muted: #8d95a5;
+    --danger: #ff5c6c;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(circle at 20% 20%, #1e1740 0, transparent 30%),
+        radial-gradient(circle at 80% 80%, #172c42 0, transparent 30%),
+        var(--background);
+}
+
+/* Main container */
+
+.calculator-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+/* Calculator */
+
+.calculator {
+    width: 100%;
+    padding: 24px;
+
+    background: rgba(21, 25, 34, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55),
+        0 0 50px rgba(124, 92, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+}
+
+/* Header */
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.calculator-header h1 {
+    margin-top: 8px;
+    font-size: 24px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: rgba(124, 92, 255, 0.12);
+    color: #a995ff;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+    background: #62e68a;
+
+    box-shadow: 0 0 15px rgba(98, 230, 138, 0.7);
+}
+
+/* Display */
+
+.display-container {
+    min-height: 125px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    background: var(--display);
+    border-radius: 18px;
+
+    margin-bottom: 18px;
+
+    overflow: hidden;
+}
+
+.expression {
+    width: 100%;
+
+    text-align: right;
+    color: var(--muted);
+
+    font-size: 17px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    min-height: 25px;
+}
+
+.result {
+    width: 100%;
+
+    margin-top: 8px;
+
+    text-align: right;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Button Grid */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+/* Buttons */
+
+button {
+    height: 68px;
+
+    border: none;
+    border-radius: 16px;
+
+    background: var(--button);
+    color: var(--text);
+
+    font-size: 21px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+button:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Operators */
+
+button.operator {
+    background: var(--operator);
+    color: #b9aaff;
+}
+
+button.operator:hover {
+    background: #424a5d;
+}
+
+/* Action buttons */
+
+button.action {
+    background: #2a303c;
+    color: #ff8792;
+}
+
+button.action:hover {
+    background: #363d4b;
+}
+
+/* Equals */
+
+button.equals {
+    background: var(--accent);
+    color: white;
+
+    box-shadow: 0 8px 25px rgba(124, 92, 255, 0.25);
+}
+
+button.equals:hover {
+    background: var(--accent-hover);
+}
+
+/* Zero */
+
+button.zero {
+    grid-column: span 2;
+}
+
+/* Hint */
+
+.hint {
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    letter-spacing: 0.4px;
+}
+
+/* Error */
+
+.error {
+    color: var(--danger) !important;
+    font-size: 25px !important;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .calculator {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .calculator-header h1 {
+        font-size: 21px;
+    }
+
+    button {
+        height: 60px;
+        border-radius: 14px;
+        font-size: 19px;
+    }
+
+    .result {
+        font-size: 34px;
+    }
+
+    .display-container {
+        min-height: 110px;
+    }
+}

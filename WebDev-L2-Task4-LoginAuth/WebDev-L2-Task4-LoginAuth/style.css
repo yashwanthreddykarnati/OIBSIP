@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+.shape-one {
+    width: 400px;
+    height: 400px;
+    background: #6366f1;
+    top: -150px;
+    left: -150px;
+    opacity: 0.45;
+}
+
+.shape-two {
+    width: 450px;
+    height: 450px;
+    background: #06b6d4;
+    bottom: -200px;
+    right: -150px;
+    opacity: 0.35;
+}
+
+/* Main */
+
+.auth-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+}
+
+/* Cards */
+
+.auth-card,
+.dashboard {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 24px;
+
+    padding: 40px 35px;
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.35);
+}
+
+.logo,
+.dashboard-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 30px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Form */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #e2e8f0;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-group input::placeholder {
+    color: #94a3b8;
+}
+
+.input-group input:focus {
+    border-color: #818cf8;
+    background: rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+/* Buttons */
+
+.primary-btn,
+.logout-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #6366f1;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #818cf8;
+    transform: translateY(-2px);
+}
+
+.logout-btn {
+    margin-top: 25px;
+
+    background: #ef4444;
+    color: white;
+}
+
+.logout-btn:hover {
+    background: #f87171;
+}
+
+/* Switch */
+
+.switch-text {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+.switch-text button {
+    border: none;
+
+    background: none;
+
+    color: #a5b4fc;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    margin-left: 4px;
+}
+
+.switch-text button:hover {
+    text-decoration: underline;
+}
+
+/* Messages */
+
+.message {
+    min-height: 20px;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+.error {
+    color: #fca5a5;
+}
+
+.success {
+    color: #86efac;
+}
+
+/* Password rules */
+
+.password-rules {
+    margin: -8px 0 15px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.password-rules p.valid {
+    color: #86efac;
+}
+
+/* Dashboard */
+
+.dashboard {
+    text-align: center;
+}
+
+.dashboard-icon {
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #4ade80;
+
+    font-size: 32px;
+}
+
+.dashboard-text {
+    color: #cbd5e1;
+
+    margin-bottom: 25px;
+}
+
+.user-info {
+    background: rgba(255, 255, 255, 0.07);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+    text-align: left;
+}
+
+.user-info p {
+    margin: 10px 0;
+
+    font-size: 14px;
+
+    color: #cbd5e1;
+
+    word-break: break-word;
+}
+
+.user-info strong {
+    color: white;
+}
+
+/* Utility */
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+
+@media (max-width: 500px) {
+
+    .auth-container {
+        padding: 15px;
+    }
+
+    .auth-card,
+    .dashboard {
+        padding: 30px 22px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

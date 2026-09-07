@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureAuth - Login</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="shape shape-one"></div>
+        <div class="shape shape-two"></div>
+    </div>
+
+    <main class="auth-container">
+
+        <!-- Login Section -->
+        <section class="auth-card" id="loginCard">
+
+            <div class="logo">
+                🔐
+            </div>
+
+            <h1>Welcome Back</h1>
+
+            <p class="subtitle">
+                Sign in to access your account
+            </p>
+
+            <form id="loginForm">
+
+                <div class="input-group">
+                    <label for="loginEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <p class="message error" id="loginMessage"></p>
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Don't have an account?
+                <button type="button" id="showRegister">
+                    Create Account
+                </button>
+            </p>
+
+        </section>
+
+
+        <!-- Registration Section -->
+        <section class="auth-card hidden" id="registerCard">
+
+            <div class="logo">
+                🛡️
+            </div>
+
+            <h1>Create Account</h1>
+
+            <p class="subtitle">
+                Join us and keep your account secure
+            </p>
+
+            <form id="registerForm">
+
+                <div class="input-group">
+                    <label for="registerName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="registerEmail">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Minimum 8 characters"
+                        required
+                    >
+                </div>
+
+                <div class="password-rules">
+
+                    <p id="lengthRule">
+                        ○ At least 8 characters
+                    </p>
+
+                    <p id="numberRule">
+                        ○ At least 1 number
+                    </p>
+
+                </div>
+
+                <p class="message" id="registerMessage"></p>
+
+                <button type="submit" class="primary-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="switch-text">
+                Already have an account?
+                <button type="button" id="showLogin">
+                    Login
+                </button>
+            </p>
+
+        </section>
+
+
+        <!-- Dashboard -->
+        <section class="dashboard hidden" id="dashboard">
+
+            <div class="dashboard-icon">
+                ✓
+            </div>
+
+            <h1>Welcome!</h1>
+
+            <p class="dashboard-text">
+                You have successfully logged in.
+            </p>
+
+            <div class="user-info">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="dashboardName"></span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="dashboardEmail"></span>
+                </p>
+
+            </div>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
